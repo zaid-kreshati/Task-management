@@ -129,7 +129,7 @@ The application follows a **clean MVC architecture** with a **Service layer** fo
      ```bash
      php artisan queue:work
      ```
-9. Import the provided Postman collection (Home Services.postman_collection.json) into Postman.
+9. Import the provided Postman collection (Task Management.postman_collection.json) into Postman.
 
 
 ---
