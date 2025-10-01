@@ -1,4 +1,4 @@
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('title', 'Categories')
 
@@ -47,7 +47,7 @@
         <!-- Search Input Field -->
         <div class="search-container">
             <input type="text" id="searchBox" placeholder="{{ __('search_categories') }}" autocomplete="off">
-            <img src="{{ asset('BeeOrder/img/searchIcon.png') }}" alt="{{ __('search_icon_alt') }}">
+            <img src="{{ asset('img/searchIcon.png') }}" alt="{{ __('search_icon_alt') }}">
         </div>
 
         <!-- Horizontal Schedule Container -->

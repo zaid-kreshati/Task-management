@@ -1,4 +1,4 @@
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('title', __('Update User Discount'))
 
@@ -20,7 +20,7 @@
         @endif
 
         <!-- User info -->
-        <table id="tasksTable" class="tasksTable">
+        <table id="tasksTable" class="tasksTable  ">
             <thead>
                 <tr>
                     <th>{{ 'ID' }}</th>

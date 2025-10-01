@@ -51,8 +51,7 @@
 <body>
     <div class="container">
         <div class="header">
-            {{-- <img src="{{ $message->embed(asset('BeeOrder/img/BeeOrder_logo.png')) }}"> --}}
-            <img src="{{ $message->embed(public_path().'/BeeOrder/img/BeeOrder_logo.png') }}">
+            <img src="{{ $message->embed(public_path().'/img/taskmanager.png') }}">
 
         </div>
 
@@ -75,13 +74,13 @@
             <p>Thank you for your attention to this matter.</p>
 
             <p>Best regards,</p>
-            <p>The BeeOrder Team</p>
+            <p>The task management Team</p>
         </div>
 
         <div class="footer">
-            <p>&copy; {{ date('Y') }} BeeOrder. All rights reserved.</p>
+            <p>&copy; {{ date('Y') }}  All rights reserved.</p>
             <p>Damascus, Syria</p>
-            <p>Email: support@beeorder.com | Phone: +963</p>
+            <p>Email: support@task management.com | Phone: +963</p>
         </div>
     </div>
 </body>

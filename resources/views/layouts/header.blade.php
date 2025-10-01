@@ -1,164 +1,122 @@
-
-
 <!DOCTYPE html>
-
 <html lang="{{ app()->currentLocale() }}">
-
-
-
 <head>
-   <!-- Scripts -->
-
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js" integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-   
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+        integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-
     <title>@yield('title', 'Default Title')</title>
     <style>
-        body, html {
-
-            font-family: Arial, sans-serif;
-
+        :root {
+            --primary-color: #009dff;
+            --primary-hover: #001aff;
         }
-
+        body, html {
+            font-family: Arial, sans-serif;
+        }
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             padding: 10px 20px;
-            background-color: #ffffff; /* White background */
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             border-bottom: 1px solid #ddd;
         }
-
         .header .logo {
             display: flex;
             align-items: center;
         }
-
         .header .logo img {
-            height: 50px; /* Adjust as needed */
-            border-radius: 50%; /* Circular logo */
+            height: 60px;
         }
-
-
-
         .header .nav {
             display: flex;
             align-items: center;
         }
-
-
         .header .nav a {
-            color: #000000; /* Black color for the "Logout" link */
+            color: #000000;
             text-decoration: none;
             margin-left: 20px;
             font-size: 16px;
         }
-
         .header .nav a:hover {
-            text-decoration: underline; /* Underline on hover */
+            text-decoration: underline;
         }
-
         .container {
             text-align: center;
             padding: 20px;
         }
-
         .container2 {
             text-align: left;
-
-
         }
-
-        .category{
-
-
-            display:flex;
-            align-items: center; /* Align items vertically center */
-
+        .category {
+            display: flex;
+            align-items: center;
             padding: 1%;
             padding-left: 30%;
         }
-        .category_name{
+        .category_name {
             width: 200px;
-
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 6px; /* Rounded corners */
-    padding: 5px; /* Padding for the input field */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 5px;
+            box-sizing: border-box;
         }
-
-        .right{
-                margin-right: 150px; /* Adjust spacing between items as needed */
-
+        .right {
+            margin-right: 150px;
         }
-
-
-
         .container h1 {
             font-size: 48px;
             margin: 0;
             padding: 0;
             color: #333;
         }
-
         .container h2 {
             font-size: 36px;
             margin-top: 10px;
-            color: #FFA500; /* Orange color to represent BeeOrder */
+            color: var(--primary-color);
         }
-
         .container p {
             font-size: 18px;
             margin-top: 20px;
             color: #666;
         }
-
         .container .btn-group {
             margin-top: 30px;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-
         .container .btn {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FFA500;
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 10px;
             border: none;
-            text-decoration: underline; /* Underline on hover */
-
         }
-
         .container .btn:hover {
-            background-color: #ff8c00;
+            background-color: var(--primary-hover);
         }
-
         .card {
             border: none;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #ffffff; /* White card background */
+            background-color: #ffffff;
             overflow: hidden;
         }
-
         .card-header {
-            background-color: #FFA500; /* Black header background */
-            color: #ffffff; /* White text color */
+            background-color: var(--primary-color);
+            color: #ffffff;
             padding: 20px;
             border-bottom: 1px solid #ddd;
             display: flex;
@@ -167,61 +125,55 @@
             border-top-left-radius: 8px;
             border-top-right-radius: 8px;
         }
-
         .card-header h3 {
             margin: 0;
             font-size: 1.5rem;
         }
-
-
         .btn-warning {
-            background-color: #ff6f00; /* Orange for warning button */
+            background-color: #ff6f00;
             border-color: #ff6f00;
-            color: #ffffff; /* White text color */
+            color: #ffffff;
         }
         .btn-warning:hover {
-            background-color: #e65c00; /* Darker orange for hover */
+            background-color: #e65c00;
             border-color: #e65c00;
         }
         .btn-danger {
-            background-color: #dc3545; /* Red button color */
+            background-color: #dc3545;
             border-color: #dc3545;
-            color: #ffffff; /* White text color */
+            color: #ffffff;
         }
         .btn-danger:hover {
-            background-color: #c82333; /* Darker red for hover */
+            background-color: #c82333;
             border-color: #c82333;
         }
         .btn-log {
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #FFA500;
+            background-color: var(--primary-color);
             color: #fff;
             border-radius: 10px;
-            margin-left: 80% ;
-
+            margin-left: 80%;
         }
-
         .table {
             margin-bottom: 0;
             width: 100%;
-
         }
-
         .table thead th {
-            background-color: #f8f9fa; /* Light gray background */
+            background-color: #f8f9fa;
             border-bottom: 2px solid #dee2e6;
-            color: #000000; /* Black text color */
+            color: #000000;
         }
-        .table td, .table th {
+        .table td,
+        .table th {
             padding: 15px;
             vertical-align: middle;
         }
         .table td {
-            background-color: #ffffff; /* White background for cells */
+            background-color: #ffffff;
         }
         .table-striped tbody tr:nth-of-type(odd) {
-            background-color: #f9f9f9; /* Light gray for odd rows */
+            background-color: #f9f9f9;
         }
         .color-box {
             width: 35px;
@@ -231,17 +183,15 @@
             cursor: pointer;
             margin-right: 10px;
             margin-bottom: 10px;
-            border: none;;
-
+            border: none;
         }
-
-
         .form-inline {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .form-inline input[type="text"], .form-inline input[type="color"] {
+        .form-inline input[type="text"],
+        .form-inline input[type="color"] {
             width: 100%;
             margin-bottom: 10px;
             border: 1px solid #ced4da;
@@ -256,7 +206,6 @@
             padding: 6px 12px;
             font-size: 0.875rem;
         }
-
         .form-inline .hidden-color-input {
             display: none;
         }
@@ -268,7 +217,6 @@
         .action-buttons form {
             margin: 0;
         }
-
         .schedule-container {
             display: flex;
             overflow-x: auto;
@@ -283,7 +231,6 @@
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-
         .category-name {
             font-size: 18px;
             font-weight: bold;
@@ -294,20 +241,15 @@
             display: flex;
             flex-direction: column;
         }
-
-        .task-list2{
-            width:25%;
+        .task-list2 {
+            width: 25%;
             margin-left: 60px;
             display: flex;
             flex-direction: column;
             text-align: left;
-
         }
-
-        .coupon{
+        .coupon {
             display: ruby-text;
-
-
         }
         .task-item {
             background-color: #FFFFFF;
@@ -322,14 +264,13 @@
             color: #333;
         }
         .text-center {
-            text-align: center; /* Center-align text */
+            text-align: center;
         }
-
         .banner {
             background: linear-gradient(to right, #000000, #000000);
             text-align: center;
             padding: 20px;
-            border-bottom: 4px solid #FF8C00;
+            border-bottom: 4px solid var(--primary-color);
             margin-bottom: 20px;
         }
         .banner h1 {
@@ -341,7 +282,7 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #FF8C00;
+            background-color: var(--primary-color);
             text-decoration: none;
             border-radius: 5px;
             margin-top: 10px;
@@ -349,39 +290,30 @@
             transition: background-color 0.3s ease;
         }
         .banner .btn:hover {
-            background-color: #FFA500;
+            background-color: var(--primary-hover);
         }
-
         h1 {
             text-align: center;
             margin-bottom: 20px;
         }
-
-
         table {
             width: 100%;
-            border-collapse: collapse; /* Ensures borders are shared between cells */
-            margin: 20px 0; /* Adds some margin above and below the table */
+            border-collapse: collapse;
+            margin: 20px 0;
         }
-
-
-
-        th, td {
-          border: 1px solid #ddd; /* Adds a thin border between cells */
-          padding: 12px; /* Adds padding inside the cells */
-          text-align: center; /* Centers the text in the cells */
-        }
-
-
-        th {
-          background-color: #f4a261; /* Sets the background color for the header */
-         color: #fff; /* Sets the text color in the header */
-        }
-
+        th,
         td {
-         background-color: #fff; /* Sets the background color for table cells */
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
         }
-
+        th {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+        td {
+            background-color: #fff;
+        }
         .action-buttons .btn {
             padding: 10px 10px;
             font-size: 14px;
@@ -391,13 +323,13 @@
             margin: 12 5px;
         }
         .action-buttons .btn-info {
-            background-color: #17a2b8;
+            background-color: var(--primary-color);
         }
         .action-buttons .btn-danger {
             background-color: #dc3545;
         }
         .action-buttons .btn-info:hover {
-            background-color: #138496;
+            background-color: var(--primary-hover);
         }
         .action-buttons .btn-danger:hover {
             background-color: #c82333;
@@ -410,24 +342,13 @@
             background-color: #f8d7da;
             border-color: #f5c6cb;
         }
-
         .card-header2 {
-            background-color: #FFA500;
+            background-color: var(--primary-color);
             color: #fff;
-            border-bottom: 1px solid #FFA500;
+            border-bottom: 1px solid var(--primary-color);
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
-
-        .alert {
-            padding: 10px;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            color: #721c24;
-            background-color: #f8d7da;
-            border-color: #f5c6cb;
-        }
-
         t-input {
             width: 100%;
             padding: 8px;
@@ -436,7 +357,7 @@
             box-sizing: border-box;
         }
         .edit-button {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -444,9 +365,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
         .edit-button2 {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -456,9 +376,8 @@
             width: 100px;
             align-self: center;
         }
-
         .update-comment-btn {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -467,7 +386,7 @@
             transition: background-color 0.3s;
         }
         .update-subtask-btn {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -475,9 +394,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
         .update-task-btn {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -485,9 +403,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
         .delete-subtask-btn {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -495,9 +412,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
         .delete-comment-btn {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -505,10 +421,8 @@
             border-radius: 4px;
             transition: background-color 0.3s;
         }
-
-
         .edit-button:hover {
-            background-color: #e09e79;
+            background-color: var(--primary-hover);
         }
         .form-group {
             margin-bottom: 15px;
@@ -526,7 +440,7 @@
             box-sizing: border-box;
         }
         .form-group button {
-            background-color: #f4a261;
+            background-color: var(--primary-color);
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -535,34 +449,29 @@
             transition: background-color 0.3s;
         }
         .form-group button:hover {
-            background-color: #e09e79;
+            background-color: var(--primary-hover);
         }
-
         .form-control {
-    width: 100%; /* Make the input take the full width of its container */
-    border: 1px solid #ddd; /* Light grey border */
-    border-radius: 6px; /* Rounded corners */
-    padding: 5px; /* Padding for the input field */
-    box-sizing: border-box; /* Include padding and border in the element's total width */
-}
-
-        .form-control:focus {
-            border-color: #f57c00; /* Orange border on focus */
-            box-shadow: 0 0 5px rgba(245, 124, 0, 0.5); /* Orange shadow on focus */
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 5px;
+            box-sizing: border-box;
         }
-
-
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(0, 157, 255, 0.5);
+        }
         .alert-success {
-            background-color: #dff0d8; /* Light green background for success */
+            background-color: #dff0d8;
             border-color: #d0e9c6;
-            color: #3c763d; /* Dark green text color */
+            color: #3c763d;
         }
         .alert-danger {
-            background-color: #f2dede; /* Light red background for errors */
+            background-color: #f2dede;
             border-color: #ebccd1;
-            color: #a94442; /* Dark red text color */
+            color: #a94442;
         }
-        /* Schedule-like layout */
         .schedule {
             display: flex;
             flex-direction: column;
@@ -572,24 +481,15 @@
             padding: 10px;
             margin-bottom: 5px;
         }
-
         .schedule-item2 {
             padding: 16px;
             margin-bottom: 5px;
-
             display: flex;
-             align-items: center;
-
-
-
+            align-items: center;
         }
-
-
         .schedule-item2 .form-control {
             flex-basis: 200px;
         }
-
-
         .schedule-item label {
             flex-basis: 18%;
             font-weight: bold;
@@ -597,7 +497,6 @@
         .schedule-item .form-control {
             flex-basis: 200px;
         }
-
         .highlight {
             background-color: yellow;
         }
@@ -609,12 +508,11 @@
             background: white;
             width: 100%;
             z-index: 10;
-            display: none; /* Hide by default */
-            top: 100%; /* Position it just below the input field */
+            display: none;
+            top: 100%;
             left: 0;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .autocomplete-suggestion {
             padding: 8px;
             cursor: pointer;
@@ -624,10 +522,10 @@
         }
         .search-container {
             display: flex;
-            align-items: center; /* Align items vertically center */
+            align-items: center;
             margin-bottom: 15px;
-            position: relative; /* To ensure the suggestions are positioned correctly */
-            width: 200px; /* Adjust the width according to your needs */
+            position: relative;
+            width: 200px;
         }
         #searchBox {
             width: 100%;
@@ -637,97 +535,68 @@
         }
         .search-container img {
             position: absolute;
-            right: 10px; /* Adjust as needed */
-            width: 25px; /* Adjust the size of the icon */
-            height: 25px; /* Adjust the size of the icon */
-            pointer-events: none; /* Ensure the icon does not interfere with input */
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            pointer-events: none;
         }
         .icon {
             width: 20px;
             height: 20px;
             vertical-align: middle;
         }
-
         .color-square {
-    width: 20px;   /* Width of the square */
-    height: 20px;  /* Height of the square */
-    background-color: #FF5733; /* Example color (you can set this dynamically) */
-    border: 1px solid #333; /* Border to distinguish the square */
-    border-radius: 3px; /* Optional rounded corners */
-    display: inline-block; /* Display as an inline block element */
-    margin: 2px; /* Spacing around the square */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); /* Optional shadow for a 3D effect */
-}
-
-  /* Responsive styles */
-  @media (max-width: 768px) {
-        .category-card {
-            width: 100%;
+            width: 20px;
+            height: 20px;
+            background-color: #FF5733;
+            border: 1px solid #333;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 2px;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         }
-    }
-
+        @media (max-width: 768px) {
+            .category-card {
+                width: 100%;
+            }
+        }
     </style>
-
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="{{ asset('BeeOrder/img/BeeOrder_logo.png') }}" alt="Logo">
+            <img src="{{ asset('/img/taskmanager.webp') }}" alt="Logo">
         </div>
-            <nav class="nav">
-                <!-- Language Switcher -->
-                <div class="language-switch">
-
-
-                    <form action="{{ route('language.switch') }}" method="POST">
-                        @csrf
-                        <select name="language" onchange="this.form.submit()">
-                            <option value="en" {{ session('locale') == 'en' ? 'selected' : '' }}>English</option>
-                            <option value="ar" {{ session('locale') == 'ar' ? 'selected' : '' }}>عربي</option>
-                        </select>
-                    </form>
-
-
-
-
-                </div>
-                @role('leader')
+        <nav class="nav">
+            <div class="language-switch">
+                <form action="{{ route('language.switch') }}" method="POST">
+                    @csrf
+                    <select name="language" onchange="this.form.submit()">
+                        <option value="en" {{ session('locale') == 'en' ? 'selected' : '' }}>English</option>
+                        <option value="ar" {{ session('locale') == 'ar' ? 'selected' : '' }}>عربي</option>
+                    </select>
+                </form>
+            </div>
+            @role('leader')
                 <a href="{{ route('logs') }}">{{ __('View Logs') }}</a>
             @endrole
-
             <a href="{{ route('home') }}">{{ __('Home') }}</a>
-
-            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+            <a href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}
             </a>
-
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
         </nav>
     </header>
-
     <div class="container">
-        <!-- Main content will be placed here -->
-
-
         @yield('content')
     </div>
-
-
-
-
     <script>
         $(function() {
-            // Initialize Select2 for dropdowns
             $('#language').select2();
-            });
-
-     </script>
-
-
-
-
-
+        });
+    </script>
 </body>
 </html>

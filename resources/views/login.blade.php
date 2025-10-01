@@ -1,4 +1,4 @@
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('title', __('login'))
 

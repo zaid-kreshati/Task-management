@@ -9,18 +9,18 @@
 </head>
 
 
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('title', __('welcome'))
 
 @section('content')
 <body>
-    <!-- Main Content -->
+    <!-- Main Content -->   
         <div class="logo mb-4">
-            <img src="{{ asset('BeeOrder/img/beeOrder.png') }}" alt="Logo">
+            <img src="{{ asset('/img/taskmanager.webp') }}" alt="Logo">
         </div>
         <h1>{{ __('welcome') }}</h1>
-        <h2>{{ __('BeeOrder Task Management') }}</h2>
+        <h2>{{ __(' Task Management') }}</h2>
         <div class="btn-group mt-4">
             <a href="{{ url('/register') }}" class="btn btn-primary">{{ __('Register') }}</a>
             <a href="{{ url('/login') }}" class="btn btn-secondary">{{ __('Login') }}</a>

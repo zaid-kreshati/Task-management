@@ -1,22 +1,21 @@
 <!DOCTYPE html>
 <html lang="{{ app()->currentLocale() }}">
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('content')
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @section('title', __('Task Management BeeOrder'))
+    @section('title', __('Task Management'))
 </head>
 
 <body>
     <div class="image-container">
-        <img src="/BeeOrder/img/beeOrder.png" alt="{{ __('BeeOrder') }}">
+        <img src="/img/taskmanager.webp" alt="{{ __('task manager') }}">
     </div>
 
     <div class="main-content">
-        <h1>{{ __('Home') }}</h1>
         <div class="btn-group">
             <a href="{{ route('tasks.index') }}" class="btn">{{ __('View All Tasks') }}</a>
             <a href="{{ route('categories.index') }}" class="btn">{{ __('View All Categories') }}</a>

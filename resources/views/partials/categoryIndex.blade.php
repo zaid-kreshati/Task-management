@@ -1,5 +1,5 @@
 <!-- Categories Table -->
-<table id="categoriesTable">
+<table id="categoriesTable" >
     <thead>
         <tr>
             <th>{{__('ID')}}</th>

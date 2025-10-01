@@ -2,7 +2,7 @@
     use App\Enums\TaskStatus; // Declare the TaskStatus enum here
 @endphp
 
-@extends('layouts.BeeOrder_header')
+@extends('layouts.header')
 
 @section('title', __('Task Details'))
 
@@ -37,7 +37,7 @@
                             <tr id="task-{{ $task->id }}">
                                 <td>{{ $task->id }}</td>
                                 <td>
-                                  
+
                                     @if ([app()->getLocale()])
 
                                     <input type="Text" id="task_description_en" value="{{ json_decode($task->task_description, true)['en'] }}">
@@ -70,9 +70,9 @@
                                 </td>
                                 <td>
                                     @if ($task->end_flag)
-                                        <img src="{{ asset('BeeOrder/img/true.png') }}" alt="{{ __('True') }}" class="icon">
+                                        <img src="{{ asset('img/true.png') }}" alt="{{ __('True') }}" class="icon">
                                     @else
-                                        <img src="{{ asset('BeeOrder/img/false.png') }}" alt="{{ __('False') }}" class="icon">
+                                        <img src="{{ asset('img/false.png') }}" alt="{{ __('False') }}" class="icon">
                                     @endif
                                 </td>
                                 <td>
